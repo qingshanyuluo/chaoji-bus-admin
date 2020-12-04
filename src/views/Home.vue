@@ -91,6 +91,7 @@
 </template>
 
 <script>
+import db from "../utils/localstorage.js"
 export default {
   name: 'Home',
   components: {
@@ -109,8 +110,7 @@ export default {
   methods: {
     exit() {
       this.$store.commit("account/reLogin");
-      window.sessionStorage.clear();
-
+      db.clear();
       this.$router.push("/login").then(() => {
         this.$message.success("已注销");
       });
