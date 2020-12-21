@@ -5,14 +5,14 @@
       <el-card class="box-card">
         <h1>管理员登录</h1>
         <el-input
-          v-model="username"
-          placeholder="用户名"
+          v-model="phone"
+          placeholder="手机号"
           clearable
           class="p"
         ></el-input>
         <el-input
           v-model="password"
-          placeholder="用户名"
+          placeholder="密码"
           clearable
           show-password
           class="p"
@@ -33,26 +33,26 @@ import service from "@/utils/request";
 export default {
   data() {
     return {
-      username: "",
+      phone: "",
       password: "",
     };
   },
   methods: {
     login() {
-      console.log(this.username);
+      console.log(this.phone);
       service
         .post("/user/login", {
-          username: this.username,
+          phone: this.phone,
           password: this.password,
         })
         .then((res) => {
           console.log(res);
-          if (res.data.status_code == 200) {
-            if (res.data.message.type != 2) {
+          if (res.data.status_code === 200) {
+            if (res.data.message.user.type !== 2) {
               alert("你不是管理员");
             } else {
-              this.$store.commit("setUserID", res.data.message.id);
-              this.$store.commit("setToken", res.data.message.id);
+              this.$store.commit("setUserID", res.data.message.user.id);
+              this.$store.commit("setToken", res.data.message.token);
               this.$router.push("/home");
             }
           } else {
