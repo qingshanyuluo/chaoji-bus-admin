@@ -26,7 +26,7 @@ module.exports = {
             */
             '/api': {
                 /* 目标代理服务器地址 */
-                target: 'http://localhost:8888/',
+                target: 'http://mrbus.net:8888/',
                 /* 允许跨域 */
                 changeOrigin: true,
                 // pathRewrite: {

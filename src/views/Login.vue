@@ -48,7 +48,7 @@ export default {
         .then((res) => {
           console.log(res);
           if (res.data.status_code === 200) {
-            if (res.data.message.user.type !== 2) {
+            if (res.data.message.user.type !== 0) {
               alert("你不是管理员");
             } else {
               this.$store.commit("setUserID", res.data.message.user.id);
