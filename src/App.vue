@@ -14,6 +14,10 @@
   height: 100%;
 }
 
+router-view {
+  height: 100%;
+}
+
 #nav {
   padding: 30px;
 }

@@ -2,9 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
-import Order from '../views/Order.vue'
-import HistoryOrder from '../views/HistoryOrder.vue'
-import AddBus from '../views/AddBus.vue'
+import Order from '../views/menu/Order.vue'
 
 Vue.use(VueRouter)
 
@@ -37,16 +35,6 @@ const routes = [
         path: 'order',
         name: 'order',
         component: Order
-      },
-      {
-        path: 'addbus',
-        name: 'addbus',
-        component: AddBus
-      },
-      {
-        path: 'history_order',
-        name: 'history_order',
-        component: HistoryOrder
       }
     ]
   },
