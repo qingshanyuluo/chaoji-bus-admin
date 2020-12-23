@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
 import Order from '../views/menu/Order.vue'
+import Bus from '../views/menu/Bus.vue'
 
 Vue.use(VueRouter)
 
@@ -35,6 +36,11 @@ const routes = [
         path: 'order',
         name: 'order',
         component: Order
+      },
+      {
+        path: 'bus',
+        name: 'bus',
+        component: Bus
       }
     ]
   },

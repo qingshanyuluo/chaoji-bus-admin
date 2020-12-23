@@ -14,7 +14,7 @@ const service = axios.create({
 service.interceptors.request.use(
   request => {
     // 有 token就带上
-    if (store.state.isLogin) {
+    if (store.state.token) {
       request.headers["token"] = store.state.token;
     }
     return request;
