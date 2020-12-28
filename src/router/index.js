@@ -30,7 +30,32 @@ const routes = [
     children: [
       {
         path: '',
-        redirect: 'order'
+        redirect: 'users'
+      },
+      {
+        path: 'users',
+        name: 'users',
+        component:() => import('@/views/menu/User.vue')
+      },
+      {
+        path: 'query_user',
+        name: 'query_user',
+        component:() => import('@/views/menu/QueryUser.vue')
+      },
+      {
+        path: 'bus',
+        name: 'bus',
+        component:() => import('@/views/menu/Bus.vue')
+      },
+      {
+        path: 'bus_info',
+        name: 'bus_info',
+        component:() => import('@/views/menu/BusInfo.vue')
+      },
+      {
+        path: 'driver',
+        name: 'driver',
+        component:() => import('@/views/menu/Driver.vue')
       },
       {
         path: 'order',

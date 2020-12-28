@@ -24,7 +24,7 @@
               <router-link to="users" tag="div">
                 <el-menu-item index="1-1">所有用户</el-menu-item>
               </router-link>
-              <router-link tag="query_user" to="history_order">
+              <router-link tag="div" to="query_user">
                 <el-menu-item index="1-2">查询信息</el-menu-item>
               </router-link>
             </el-submenu>
