@@ -39,7 +39,7 @@ export default {
   },
   methods: {
     login() {
-      console.log(this.phone);
+      // console.log(this.phone);
       service
         .post("/user/login", {
           phone: this.phone,
@@ -48,11 +48,13 @@ export default {
         .then((res) => {
           console.log(res);
           if (res.data.status_code === 200) {
-            if (res.data.message.user.type !== 0) {
+            console.log(res.data.data);
+            console.log(res.data.data.user.type);
+            if (res.data.data.user.type !== 0) {
               alert("你不是管理员");
             } else {
-              this.$store.commit("setUserID", res.data.message.user.id);
-              this.$store.commit("setToken", res.data.message.token);
+              this.$store.commit("setUserID", res.data.data.user.id);
+              this.$store.commit("setToken", res.data.data.token);
               this.$router.push("/home");
             }
           } else {

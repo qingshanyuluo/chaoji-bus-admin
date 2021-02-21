@@ -4,7 +4,7 @@ npm run build
 
 host="mrbus.net"
 username="root"
-password="12qwaszx,."
+password=""
 
 echo 'copy to server'
 

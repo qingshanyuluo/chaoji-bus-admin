@@ -31,25 +31,19 @@ service.interceptors.response.use(
      * code为非200是抛错 可结合自己业务进行修改
      */
     const res = response.data;
+    console.log(res);
     //console.log(res.code);
     // console.log(response);
-    if (res.code !== 200) {
+    if (res.status_code !== 200) {
       if (res.status) {
         return response;
       }
-      if (res.code === 401) {
+      if (res.status_code === 401) {
         alert("注册信息已过期，请重新登录！");
         window.location = "/login";
         return response;
-        //} else if (res.code === 500) {
-      } else if (res.status === 500) {
+      } else if (res.status_code === 500) {
         return response;
-        // Message({
-        //   message: res.msg,
-        //   type: "error",
-        //   duration: 5 * 1000
-        // });
-        // return Promise.reject(new Error(res.msg));
       }
     } else {
       return response;
